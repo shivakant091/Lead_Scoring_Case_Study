@@ -1,18 +1,60 @@
-# Lead Scoring Case Study
-- `Problem Statement:` An education company named X Education sells online courses to industry professionals. On any given day, many professionals who are interested in the courses land on their website and browse for courses.
+# Lead Scoring Project
 
-- The company markets its courses on several websites and search engines like Google. Once these people land on the website, they might browse the courses or fill up a form for the course or watch some videos. When these people fill up a form providing their email address or phone number, they are classified to be a lead. Moreover, the company also gets leads through past referrals. Once these leads are acquired, employees from the sales team start making calls, writing emails, etc. Through this process, some of the leads get converted while most do not. The typical lead conversion rate at X education is around 30%.
+This repository contains the code and analysis for the Lead Scoring project, which focuses on optimizing the lead conversion process for X Education, an online educational company.
 
-- Now, although X Education gets a lot of leads, its lead conversion rate is very poor. For example, if, say, they acquire 100 leads in a day, only about 30 of them are converted. To make this process more efficient, the company wishes to identify the most potential leads, also known as ‘Hot Leads’. If they successfully identify this set of leads, the lead conversion rate should go up as the sales team will now be focusing more on communicating with the potential leads rather than making calls to everyone. A typical lead conversion process can be represented using the following funnel:
+## Project Overview
+The objective of this project is to build a lead scoring model that effectively identifies potential customers with a higher likelihood of conversion. By prioritizing leads based on their conversion potential, X Education can streamline their sales efforts and improve the overall conversion rate.
 
-  - Lead Conversion Process - Demonstrated as a funnel As you can see, there are a lot of leads generated in the initial stage (top) but only a few of them come out as paying customers from the bottom. In the middle stage, you need to nurture the potential leads well (i.e. educating the leads about the product, constantly communicating etc. ) in order to get a higher lead conversion.
+## Model Summary
+The lead scoring model is based on a logistic regression approach, utilizing 12 predictor variables. The model demonstrates a good fit, with a pseudo R-squared value of 0.3468. The selected features that contribute most to lead conversion probability are:
 
-  - X Education has appointed you to help them select the most promising leads, i.e. the leads that are most likely to convert into paying customers. The company requires you to build a model wherein you need to assign a lead score to each of the leads such that the customers with higher lead score have a higher conversion chance and the customers with lower lead score have a lower conversion chance. The CEO, in particular, has given a ballpark of the target lead conversion rate to be around 80%.
+1. Do Not Email
+2. Total Time Spent on Website
+3. Lead Origin_Lead Add Form
+4. Lead Source_Direct Traffic
+5. Lead Source_Google
+6. Lead Source_Organic Search
+7. Lead Source_Reference
+8. Lead Source_Referral Sites
+9. What is your current occupation_Other
+10. What is your current occupation_Student
+11. What is your current occupation_Unemployed
+12. What is your current occupation_Working Professional
 
-- `Data:` You have been provided with a leads dataset from the past with around 9000 data points. This dataset consists of various attributes such as Lead Source, Total Time Spent on Website, Total Visits, Last Activity, etc. which may or may not be useful in ultimately deciding whether a lead will be converted or not. The target variable, in this case, is the column ‘Converted’ which tells whether a past lead was converted or not wherein 1 means it was converted and 0 means it wasn’t converted. You can learn more about the dataset from the data dictionary provided in the zip folder at the end of the page. Another thing that you also need to check out for are the levels present in the categorical variables. Many of the categorical variables have a level called 'Select' which needs to be handled because it is as good as a null value (think why?).
+These features play a crucial role in predicting lead conversion, and X Education should focus on leveraging them to maximize their sales potential.
 
-## Goals of the Case Study: There are quite a few goals for this case study.
+## Model Evaluation
+The model demonstrates a good level of accuracy, with an overall accuracy of 80.30%. The sensitivity (true positive rate) is 64.90%, indicating the model's ability to correctly identify positive instances (converted leads). The specificity (true negative rate) stands at 89.72%, reflecting the model's proficiency in identifying negative instances (non-converted leads).
 
-- Build a logistic regression model to assign a lead score between 0 and 100 to each of the leads which can be used by the company to target potential leads. A higher score would mean that the lead is hot, i.e. is most likely to convert whereas a lower score would mean that the lead is cold and will mostly not get converted. There are some more problems presented by the company which your model should be able to adjust to if the company's requirement changes in the future so you will need to handle these as well. These problems are provided in a separate doc file. Please fill it based on the logistic regression model you got in the first step. Also, make sure you include this in your final PPT where you'll make recommendations.
+## Recommendations
+Based on the analysis and model findings, the following recommendations can be made:
 
-`Results Expected:` A well-commented Jupyter note with at least the logistic regression model, the conversion predictions and evaluation metrics. The word document filled with solutions to all the problems. The overall approach of the analysis in a presentation Mention the problem statement and the analysis approach briefly Explain the results in business terms Include visualisations and summarise the most important results in the presentation A brief summary report in 500 words explaining how you proceeded with the assignment and the learnings that you gathered.
+1. Implement lead prioritization based on the identified important features to focus sales efforts on high-potential leads.
+2. Pay attention to lead sources such as Direct Traffic, Google, Organic Search, and Referral Sites, as they contribute significantly to lead conversion.
+3. Utilize Lead Add Forms as they exhibit a strong positive impact on lead conversion.
+4. Target Working Professionals, Students, and individuals in Other occupations, as they show a higher likelihood of conversion.
+5. Pay attention to factors such as Do Not Email and Total Time Spent on Website, as they significantly influence lead conversion probability.
+
+By implementing these recommendations, X Education can enhance their lead conversion process and achieve improved sales performance.
+
+
+## Repository Structure
+The repository contains the following files and directories:
+
+- `Lead_Scoring_Assignment.ipynb`: The main Jupyter Notebook file containing the code for data preprocessing, model training, and evaluation.
+- `subjective questions & Summary`: This directory includes two Word documents in PDF format, providing detailed documentation and analysis of the project.
+- `lead_scoring_CaseStudy_Presentation`: This directory contains a PDF presentation summarizing the project and its findings.
+- `README.md`: The file you are currently reading, providing an overview and details about the project.
+
+Feel free to adjust the details based on your actual file and folder structure.
+## Usage
+To reproduce the results and run the code in this repository, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/your-username/lead-scoring.git`
+2. Install the required dependencies: `pip install -r requirements.txt`
+3. Explore the Jupyter notebooks in the `notebooks/` directory to understand the project workflow and execute the code cells.
+
+Please refer to the Jupyter notebooks for a detailed analysis and step-by-step explanation of the lead scoring project.
+
+## Conclusion
+The Lead Scoring project provides X Education with a data-driven approach to prioritize leads and enhance their lead conversion process. By utilizing the identified important features and implementing the lead scoring model, X Education can focus their sales efforts on high-potential leads, leading to improved conversion rates and increased sales performance.
